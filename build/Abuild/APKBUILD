@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=gtest
 pkgver=1.17.0
-pkgrel=2
+pkgrel=${pkgrel:-0}
 pkgdesc="Google Test - C++ testing utility based on the xUnit framework (like JUnit)"
 url="https://github.com/google/googletest"
 arch="all"
@@ -48,6 +48,7 @@ src() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 0f57e9ef06925e5b7722df1eb92ef5850e8dce79220ea16a8aaff586a71c0b01460ef1713649ee24ffedb2e6ad5a51e9198c5a5ae1b2789e43feb1f494e7d45c  gtest-1.17.0.tar.gz
 "
